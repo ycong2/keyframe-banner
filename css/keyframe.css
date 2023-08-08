@@ -1,0 +1,75 @@
+:root{
+    --bgcolor: #9326ea; 
+    --content: 1280px;
+}
+
+.abs{
+    position: absolute;
+}
+.rel{
+    position: relative;
+}
+.fix{
+    position: fixed;
+}
+/* 내 자식들을 정렬 */
+.d-flex{display: flex;}
+.jcc{ justify-content: center;}
+.jcb{justify-content: space-between;}
+.aic{align-items: center;}
+
+.flex-column{ flex-direction: column;}
+.d-block{display: block;}
+.d-none{display: none;}
+
+/* layout */
+#banner{
+    height: 650px;
+    background-color: var(--bgcolor);
+}
+#banner img{
+    max-width: 100%;
+    opacity: 0;
+}
+.container{
+    width: var(--content);
+    margin: 0 auto;
+    height: 100%;
+}
+.left, .right{
+    width: 50%;
+    padding:0 20px;
+}
+
+.left .ani5{
+    /* transform: scale(0.5) translate(10px, 10px); 이렇게 할수도 있지만 트랜스폼은 아껴라  */
+    left:-22%;
+    top:50%;
+    width:39%;   
+    z-index: 100;
+}
+.left .ani3{
+    /* position: relative; */
+    top:26%;
+    right:18%;
+}
+.left .ani4{
+
+}
+
+
+.right{
+    /* display: flex; */
+    /* flex-direction: column;0 */
+    justify-content: end;
+}
+.right .abs{
+    left: -10%;
+    right:-15%;
+    
+}
+.right .abs img:nth-child(1){
+    /* transform: scale(0.8) translateY(-50%);영상넣으려면 풀어야 함 플랙스방향이 x축이면 위드로 y축이면 하이트지정*/
+    height:50%;
+    width: 30%;
+}   
