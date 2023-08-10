@@ -31,6 +31,7 @@
 #banner img{
     max-width: 100%;
     opacity: 0;
+    animation-fill-mode: forwards;/*마지막프레임에서 멈춤*/
 }
 .container{
     width: var(--content);
@@ -48,13 +49,23 @@
     top:50%;
     width:39%;   
     z-index: 100;
+    animation-name: leftright;
+    animation-delay: 3s;
+    animation-duration: 0.5s;
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 .left .ani3{
     /* position: relative; */
     top:26%;
     right:18%;
+    animation-name: cloud;
+    animation-delay: 2s;
+    animation-duration: 1s;
 }
 .left .ani4{
+    animation-name: cloud;
+    animation-delay: 2.5s;
+    animation-duration: 1s;
 
 }
 .hp{
@@ -90,3 +101,36 @@
     height:50%;
     width: 30%;
 }   
+.cloud{
+    opacity: 0;
+    animation-name: cloud;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+    z-index: 1000;
+}
+.cloud img{
+    opacity: 1 !important;
+}
+
+@keyframes cloud{
+    0%{
+        opacity: 0;
+        transform: translateY(-30%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes leftright{
+    0%{
+        transform:translateX(-100%) ;
+        opacity: 0;
+    }
+    100%{
+        transform:translateX(0%) ;
+        /* 원래자리로 */
+        opacity: 1;
+    }
+}
